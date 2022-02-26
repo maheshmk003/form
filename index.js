@@ -10,10 +10,10 @@ form.addEventListener('student',e=>{
 });
 
 function checkInput(){
-    const usernameValue = username.Value.trim();
-    const emailValue = email.Value.trim();
-    const passwordValue = password.Value.trim();
-    const password2Value = password2.Value.trim();
+    const usernameValue = username.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+    const password2Value = password2.value.trim();
     
     if (usernameValue === ''){
         setError(username,'Username Cannot Be Blank');
@@ -44,13 +44,13 @@ function checkInput(){
         setError(password2,'Password Doesnot Match' );
     }
     else{
-        setSuccess(password2);
+        setSuccess(password2)
     }
 }
 function setError(input, message){
     const formControl = input.parentElement;
 const small = c1.querySelector('small');
-c1.classname ='c1 error';
+formControl.classname ='c1 error';
 small.innerText = message;
 }
 function isEmail(email){
@@ -59,6 +59,6 @@ return/^(([^<>()\[\]\\.,;:\@s"]+(\.[^<>()\[\]\\.,;:\s@"]+)|(".+"))@((\[[0-9]{1,3
 {1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+[a-zA-Z]{2,}))$/.test(email);
 }
 function setSuccess(){
-const c1= input.parentElement;
-c1.classname='c1 success';
+const formControl= input.parentElement;
+formControl.classname='c1 success';
 }
